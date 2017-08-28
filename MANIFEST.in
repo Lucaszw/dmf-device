@@ -1,8 +1,0 @@
-include README.md
-include COPYING
-include CHANGELOG
-include setup.py
-include version.py
-include RELEASE-VERSION
-include paver-minilib.zip
-recursive-include microdrop *
