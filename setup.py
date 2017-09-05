@@ -11,6 +11,6 @@ setup(name='dmf-device',
       description=open('README.md', 'rb').read(),
       author='Christian Fobel',
       author_email='christian@fobel.net',
-      url='https://github.com/Lucaszw/dmf_device',
+      url='https://github.com/Lucaszw/dmf-device',
       install_requires=['paho-mqtt', 'wheezy'],
       packages=['paho_mqtt_helpers'])
