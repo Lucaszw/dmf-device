@@ -3,10 +3,10 @@
 import sys
 from setuptools import setup
 sys.path.insert(0, '.')
-import version
+import versioneer
 
 setup(name='dmf-device',
-      version=version.getVersion(),
+      version=versioneer.get_version(),
       description=open('README.md', 'rb').read(),
       author='Christian Fobel',
       author_email='christian@fobel.net',
