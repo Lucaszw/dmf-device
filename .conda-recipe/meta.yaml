@@ -3,13 +3,17 @@
 source:
   git_url: ../
 
+{% if "GIT_DESCRIBE_NUMBER" not in environ %}
+{% set VERSION_NUMBER = "0+unknown"  %}
+{% elif GIT_DESCRIBE_NUMBER > '0'  %}
+{% set VERSION_NUMBER = GIT_DESCRIBE_TAG[1:] + ".post" + GIT_DESCRIBE_NUMBER %}
+{% else  %}
+{% set VERSION_NUMBER = GIT_DESCRIBE_TAG[1:] %}
+{% endif %}
+
 package:
   name: dmf-device
-{% if GIT_DESCRIBE_NUMBER > '0' %}
-  version: {{ GIT_DESCRIBE_TAG[1:] }}.post{{ GIT_DESCRIBE_NUMBER }}
-{% else %}
-  version: {{ GIT_DESCRIBE_TAG[1:] }}
-{% endif %}
+  version: {{ VERSION_NUMBER }}
 
 build:
   # If this is a new build for the same version, increment the build
